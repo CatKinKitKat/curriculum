@@ -1,0 +1,220 @@
+% !TEX program = xelatex
+\documentclass[a4paper,10pt]{article}
+\usepackage[portuguese]{babel}
+\usepackage{calc}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[default]{opensans}
+\newgeometry{left=15mm,right=15mm,top=15mm,bottom=15mm}
+\newlength{\cvcolumngapwidth}
+\setlength{\cvcolumngapwidth}{3.5mm}
+\newlength{\cvleftcolumnwidth}
+\setlength{\cvleftcolumnwidth}{44.5mm}
+\newlength{\cvrightcolumnwidth}
+\setlength{\cvrightcolumnwidth}{\textwidth-\cvleftcolumnwidth-\cvcolumngapwidth}
+\setlength{\parindent}{0mm}
+\defaultfontfeatures{Ligatures=TeX}
+\newfontfamily{\cvnamefont}{Open Sans Bold}
+\newfontfamily{\cvsectionfont}{Open Sans Bold}
+\newfontfamily{\cvtitlefont}{Open Sans Bold}
+\newfontfamily{\cvdurationfont}{Open Sans Light Italic}
+\newfontfamily{\cvheadingfont}{Open Sans Regular}
+\definecolor{cvnamecolor}{HTML}{000000}
+\definecolor{cvsectioncolor}{HTML}{000000}
+\definecolor{cvtitlecolor}{HTML}{000000}
+\definecolor{cvdurationcolor}{HTML}{000000}
+\definecolor{cvheadingcolor}{HTML}{000000}
+\definecolor{cvmaincolor}{HTML}{000000}
+\definecolor{cvrulecolor}{HTML}{000000}
+\color{cvmaincolor}
+\newcommand{\cvnamestyle}[1]{{\Large\cvnamefont\textcolor{cvnamecolor}{#1}}}
+\newcommand{\cvsectionstyle}[1]{{\normalsize\cvsectionfont\textcolor{cvsectioncolor}{#1}}}
+\newcommand{\cvtitlestyle}[1]{{\large\cvtitlefont\textcolor{cvtitlecolor}{#1}}}
+\newcommand{\cvdurationstyle}[1]{{\small\cvdurationfont\textcolor{cvdurationcolor}{#1}}}
+\newcommand{\cvheadingstyle}[1]{{\normalsize\cvheadingfont\textcolor{cvheadingcolor}{#1}}}
+\newlength{\cvafteritemskipamount}
+\setlength{\cvafteritemskipamount}{5mm plus 1.25mm minus 1.25mm}
+\newlength{\cvaftersectionskipamount}
+\setlength{\cvaftersectionskipamount}{2mm plus 0.5mm minus 0.5mm}
+\newlength{\cvbetweensectionandheadingextraskipamount}
+\setlength{\cvbetweensectionandheadingextraskipamount}{1mm plus 0.25mm minus 0.25mm}
+\newlength{\cvafternameskipamount}
+\setlength{\cvafternameskipamount}{3mm plus 0.75mm minus 0.75mm}
+\newlength{\cvafterpersonalinfolineskipamount}
+\setlength{\cvafterpersonalinfolineskipamount}{2mm plus 0.5mm minus 0.5mm}
+\newlength{\cvaftertitleskipamount}
+\setlength{\cvaftertitleskipamount}{1mm plus 0.25mm minus 0.25mm}
+\newlength{\cvparskip}
+\setlength{\cvparskip}{0.5mm plus 0.125mm minus 0.125mm}
+\setlist{parsep=0mm,topsep=0mm,partopsep=0mm,itemsep=\cvparskip}
+\newcommand{\cvpersonalinfo}[2]{
+
+    \begin{minipage}[t]{\cvleftcolumnwidth}
+        \vspace{0mm}
+        \raggedleft#1
+    \end{minipage}
+    \hspace{\cvcolumngapwidth}
+    \begin{minipage}[t]{\cvrightcolumnwidth}
+        \vspace{0mm}
+        #2
+    \end{minipage}
+
+    \vspace{\cvafteritemskipamount}
+}
+\newcommand{\cvname}[1]{
+
+    \cvnamestyle{#1}
+
+    \vspace{\cvafternameskipamount}
+}
+\newcommand{\cvpersonalinfolinewithicon}[3]{
+
+    \raisebox{.5\fontcharht`E-.5\height}{\includegraphics[#1]{#2}}
+
+    #3
+
+    \vspace{\cvafterpersonalinfolineskipamount}
+}
+\newcommand{\cvsection}[1]{
+
+    \begin{minipage}[t]{\cvleftcolumnwidth}
+        \raggedleft\cvsectionstyle{#1}
+    \end{minipage}
+    \hspace{\cvcolumngapwidth}
+    \begin{minipage}[t]{\cvrightcolumnwidth}
+        \textcolor{cvrulecolor}{\rule{\cvrightcolumnwidth}{0.3mm}}
+    \end{minipage}
+
+    \vspace{\cvaftersectionskipamount}
+}
+\newcommand{\cvitem}[2]{
+
+    \begin{minipage}[t]{\cvleftcolumnwidth}
+        \raggedleft #1
+    \end{minipage}
+    \hspace{\cvcolumngapwidth}
+    \begin{minipage}[t]{\cvrightcolumnwidth}
+        \setlength{\parskip}{\cvparskip} #2
+    \end{minipage}
+
+    \vspace{\cvafteritemskipamount}
+}
+\newcommand{\cvtitle}[1]{
+
+    \cvtitlestyle{#1}
+
+    \vspace{\cvaftertitleskipamount}
+
+    \vspace{-\cvparskip}
+}
+\pagestyle{empty}
+\begin{document}
+\cvpersonalinfo{
+
+    \includegraphics[height=46mm]{photo.jpeg}
+}{
+
+    \mbox{\cvname{Gonçalo Candeias Amaro}
+      \textcolor{lightgray}{\textit{Engenheiro de Software Junior}}
+    }
+
+    \cvpersonalinfolinewithicon{height=4mm}{072-location.pdf}{Évora, Portugal}
+
+    \cvpersonalinfolinewithicon{height=4mm}{067-phone.pdf}{+351 96 922 99 08}
+
+    \cvpersonalinfolinewithicon{height=4mm}{070-envelop.pdf}{goncalo.cand.amaro@gmail.com}
+
+    \cvpersonalinfolinewithicon{height=4mm}{458-linkedin.pdf}{https://www.linkedin.com/in/amaro374/}
+
+}
+\cvsection{SKILLSET}
+\vspace{\cvbetweensectionandheadingextraskipamount}
+\cvitem{
+  \cvdurationstyle{Skills Técnicos}
+}{
+  Programação
+  \begin{itemize}
+      \item Frontend com HTML/CSS/JS e uma JS Framework (ReactJS)
+      \item Backend com PHP (Laravel) ou Java (SpringBoot)
+      \item Programas Desktop com GUI através de Java (JavaFX), Python (DearPyGUI) e outras
+      \item Programas Mobile através de Android Native (em Java)
+      \item Programas em terminal e/ou scripts com uma variedade de linguagens
+      \item Vontade de aprender outras, por gosto ou necessidade
+  \end{itemize}\\
+  Arquitetura de Redes (conhecendo Cisco e MikroTik)\\
+  Administração de Sistemas (Linux preferencialmente, mas também Windows Server)
+}
+\cvitem{
+    \cvdurationstyle{Línguas}
+}{
+    Inglês -- \textit{Fluente}
+    \begin{itemize}
+        \item Detenho diplomas de Cambridge e de outras avaliações.
+    \end{itemize}
+    Português -- \textit{Nativo}
+}
+\cvitem{
+    \cvdurationstyle{Outros}
+}{
+    Liderança e trabalho de equipa\\
+    Vontade de aprender e ensinar/ajudar
+}
+\cvsection{EXPERIÊNCIA}
+\cvitem{
+    \cvdurationstyle{Novembro 2016 -- Fevereiro 2017}
+}{
+    \cvtitle{Estagiário (Segurança Informática)}
+    Novabase, Lisboa
+    \begin{itemize}[leftmargin=*]
+        \item Estágio profissional do 12º Ano onde desenvolvi competências e deu-me uma visão sobre uma empresa diferente da do estágio anterior. Esta tendo uma cultura e atuações diferentes.
+        \item Foi desenvolvido um wIDS básico. Este recorria a um conjunto de bash scripts que traduziam o output da ferramenta de análise do espectro de rede (aircrack-ng), para um ficheiro de dados .csv e posteriormente colocados numa base de dados SQLite.
+    \end{itemize}
+}
+\cvitem{
+    \cvdurationstyle{Maio 2016 -- Julho 2017}
+}{
+    \cvtitle{Estagiário (Suporte Técnico)}
+    Vodafone, Lisboa
+    \begin{itemize}[leftmargin=*]
+        \item Estágio escolar para o desenvolvimento de competências de suporte técnico, inicialmente para suporte interno e depois para os clientes.
+        \item Desenvolvemos a capacidade de resolução de problemas técnicos e as competências sociais para a orientação do cliente na solução do problema indicado.
+    \end{itemize}
+}
+\newpage
+\cvsection{EDUCAÇÃO}
+\cvitem{
+    \cvdurationstyle{Setembro 2017 -- Julho 2022}
+}{
+    \cvtitle{Licenciatura em Engenharia Informática}
+    Escola Superior de Tecnologia e Gestão, Instituto Politécnico de Beja
+    \begin{itemize}[leftmargin=*]
+        \item Sou finalista do curso de Licenciatura em Engenharia Informática do Instituto Politécnico de Beja.
+        \item Aqui desenvolvi todas as competências base que esta area profissional requer, tendo feito trabalhos e projetos com variadas tecnologias e tópicos, desde:
+        \\-- Análise de dados via Python ou Microsoft Power BI\@
+        \\-- Desktop Apps em Java (JavaFX) e Python (DearPyGUI)\@
+        \\-- Low-level em C/C++ e Rust\@
+        \\-- PHP (Laravel)\@
+        \\-- HTML/CSS/JS (ReactJS)\@
+        \\-- Android Native (Java)\@
+        \\-- MySQL ou SQLServer\@
+        \\-- Scripting em Bash e Python para administração de sistemas.
+    \end{itemize}
+}
+\cvitem{
+    \cvdurationstyle{Setembro 2012 -- Julho 2017}
+}{
+    \cvtitle{Técnico Profissional de Gestão de Equipamentos Informáticos}
+    Instituto dos Pupilos do Exército
+    \begin{itemize}[leftmargin=*]
+        \item Escola militar para crianças e adolescentes, com ensino básico e secundário profissional.
+        \item Co-fundador do Grupo de Alunos Utilizadores de Linux nos Pupilos.
+        \item Tive a melhor Prova de Aptidão Profissional daquele ano letivo.
+        \item Terminei o curso com 15 valores (15,4), mantive os 15 após os exames nacionais.
+    \end{itemize}
+}
+\end{document}
