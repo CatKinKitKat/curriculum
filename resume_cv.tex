@@ -17,6 +17,7 @@
 % This template must be compiled with XeLaTeX, the below lines will ensure this
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
+% !TeX spellcheck = en_GB
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -24,21 +25,21 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[11pt, a4paper]{awesome-cv} % A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
 
 \geometry{left=2cm, top=1.5cm, right=2cm, bottom=2cm, footskip=.5cm} % Configure page margins with geometry
 
 \fontdir[fonts/] % Specify the location of the included fonts
 
-% Color for highlights
-\colorlet{awesome}{awesome-skyblue} % Default colors include: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange, awesome-nephritis, awesome-concrete, awesome-darknight
-%\definecolor{awesome}{HTML}{CA63A8} % Uncomment if you would like to specify your own color
+% Colour for highlights
+\definecolor{awesome-RBD}{HTML}{002D72} % Royal Blue Dark
+\colorlet{awesome}{awesome-RBD}
 
-% Colors for text - uncomment and modify
-%\definecolor{darktext}{HTML}{414141}
-%\definecolor{text}{HTML}{414141}
-%\definecolor{graytext}{HTML}{414141}
-%\definecolor{lighttext}{HTML}{414141}
+% Colours for text
+\definecolor{darktext}{HTML}{0E0E10} % Jet Black
+\definecolor{text}{HTML}{1A1110} % Licorice
+\definecolor{graytext}{HTML}{353839} % Onyx
+\definecolor{lighttext}{HTML}{555555} % Davy's Grey
 
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad} % If you would like to change the social information separator from a pipe (|) to something else
 
@@ -79,9 +80,9 @@
 %	Each section is imported separately, open each file in turn to modify content
 %----------------------------------------------------------------------------------------
 
-\input{cv-sections/education.tex}
 \input{cv-sections/skills.tex}
 \input{cv-sections/experience.tex}
+\input{cv-sections/education.tex}
 
 %----------------------------------------------------------------------------------------
 
